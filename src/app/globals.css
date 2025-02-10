@@ -12,3 +12,6 @@ body {
 .button-line {
   @apply w-4 h-1 active:bg-red-700 bg-black-300 rounded-md;
 }
+.icon-info{
+  @apply text-gray-800 text-xs flex flex-row items-center gap-1 pl-1 pr-2 py-1 bg-black-700 border border-black-400 rounded-full
+}

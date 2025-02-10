@@ -18,12 +18,6 @@ export default {
         center: true, // Otomatik ortalansın
         padding: {
           DEFAULT: "1rem", // Tüm ekranlarda varsayılan olarak 16px (1rem) padding
-          sm: "1.5rem", // 640px ve üstü için 24px (1.5rem) padding
-          md: "2rem", // 768px ve üstü için 32px (2rem) padding
-          lg: "3rem", // 1024px ve üstü için 48px (3rem) padding
-          xl: "4rem", // 1280px ve üstü için 64px (4rem) padding
-          "2xl": "5rem", // 1536px ve üstü için 80px (5rem) padding
-          desktop: "6rem", // 1598px ve üstü için 96px (6rem) padding
         },
         screens: {
           sm: "640px",
