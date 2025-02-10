@@ -2,20 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-white bg-black-700 font-sans;
+}
+
+.button-arrow {
+  @apply w-11 h-11 bg-black-500  rounded-md flex justify-center items-center;
+}
+.button-line {
+  @apply w-4 h-1 active:bg-red-700 bg-black-300 rounded-md;
 }
