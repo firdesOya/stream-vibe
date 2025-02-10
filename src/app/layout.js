@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${manrope.variable}  antialiased`}>
         <Header />
-        <main className="container"> {children}</main>
+        <main className="container min-w-[375px] min-h-screen "> {children}</main>
         <Footer />
       </body>
     </html>
