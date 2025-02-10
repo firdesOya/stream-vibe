@@ -18,8 +18,12 @@ export default function Header() {
       </div>
       <Navbar />
       <div className="hidden lg:flex flex-row items-center gap-[30px]">
-        <img src="/icons/search.svg" alt="search" />
-        <img src="/icons/notification.svg" alt="notification" />
+        <button className="cursor-pointer p-4 bg-transparent hover:bg-black-500 rounded-md">
+          <img src="/icons/search.svg" alt="search" />
+        </button>
+        <button className="cursor-pointer p-4 bg-transparent hover:bg-black-500 rounded-md">
+          <img src="/icons/notification.svg" alt="notification" />
+        </button>
       </div>
     </div>
   );
