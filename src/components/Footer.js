@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-black-800 mt-[120px]">
       <div className="container">
-        <div className="py-20 grid gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full items-start ">
+        <div className="py-20 grid gap-7 grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 w-full items-start">
           <FooterMenu menuData={homeData} className="text-start" />
           <FooterMenu menuData={moviesData} className="text-start" />
           <FooterMenu menuData={showsData} className="text-start" />
@@ -28,22 +28,25 @@ export default function Footer() {
                 href="https://www.facebook.com/"
                 target="_blank"
                 className="link-border"
+                rel="noopener noreferrer"
               >
-                <img src="/icons/facebook.svg" />
+                <img src="/icons/facebook.svg" alt="icon-facebook" />
               </Link>
               <Link
                 href="https://x.com/"
                 target="_blank"
                 className="link-border"
+                rel="noopener noreferrer"
               >
-                <img src="/icons/twitter.svg" />
+                <img src="/icons/twitter.svg" alt="icon-twitter" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/firdes-oya/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="link-border transition-opacity duration-300 hover:opacity-70"
               >
-                <img src="/icons/linkedin.svg" />
+                <img src="/icons/linkedin.svg" alt="icon-linkedin" />
               </Link>
             </div>
           </div>
