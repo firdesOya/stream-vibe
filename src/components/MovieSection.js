@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
 import GenreCard from "./GenreCard";
 import SliderButtons from "./SliderButtons";
