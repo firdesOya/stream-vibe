@@ -1,5 +1,13 @@
 "use client";
 import MovieSection from "@/components/MovieSection";
+import {
+  fetchGenresMoviesData,
+  fetchGenresShowsData,
+  fetchMoviesData,
+  fetchOnShowData,
+  fetchPopularShowData,
+  fetchUpComingData,
+} from "@/utils/api";
 import React, { useEffect, useState } from "react";
 
 export default function MoviePage() {
@@ -7,37 +15,27 @@ export default function MoviePage() {
   const [genres, setGenres] = useState([]);
   const [upcoming, setUpComing] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showGenres, setShowGenres] = useState([]);
+  const [popularShow, setPopularShow] = useState([]);
+  const [onShow, setOnShow] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
       try {
-        const [genreRes, moviesRes, upcomingRes] = await Promise.all([
-          fetch(
-            `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`
-          ),
-          fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`
-          ),
-          fetch(
-            `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`
-          ),
-        ]);
-        const [genreData, moviesData, upcomingData] = await Promise.all([
-          genreRes.json(),
-          moviesRes.json(),
-          upcomingRes.json(),
-        ]);
-        const genresWithMovies = genreData.genres.map((genre) => ({
-          ...genre,
-          movies: moviesData.results.filter((movie) =>
-            movie.genre_ids.includes(genre.id)
-          ),
-        }));
+        const upComingData = await fetchUpComingData();
+        const moviesData = await fetchMoviesData();
+        const showData = await fetchGenresShowsData();
+        const movieGenreData = await fetchGenresMoviesData();
+        const popularShowData = await fetchPopularShowData();
+        const onShowData = await fetchOnShowData();
 
-        setGenres(genresWithMovies);
-        setMovies(moviesData.results);
-        setUpComing(upcomingData.results);
+        setOnShow(onShowData);
+        setPopularShow(popularShowData);
+        setShowGenres(showData);
+        setGenres(movieGenreData);
+        setMovies(moviesData);
+        setUpComing(upComingData);
       } catch (error) {
         console.error("Veri alınırken hata oluştu:", error);
       } finally {
@@ -48,15 +46,37 @@ export default function MoviePage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-20 py-10 lg:border lg:border-black-500 rounded-md">
-      <MovieSection cardType="genre" title="Genres" data={genres} />
-      <MovieSection cardType="movie" title="Now Playing" data={movies} />
-      <MovieSection
-        isUpComing={true}
-        cardType="movie"
-        title="New Releases"
-        data={upcoming}
-      />
-    </div>
+    <>
+      <div className="flex flex-col gap-20 py-10 lg:border relative lg:border-black-500 rounded-md">
+        <div className="bg-red-700 -top-5 left-10 px-5 py-2 text-base font-semibold rounded-md text-white absolute">
+          Movies
+        </div>
+        <MovieSection cardType="genre" title="Our Genres" data={genres} />
+        <MovieSection cardType="movie" title="Now Playing" data={movies} />
+        <MovieSection
+          isUpComing={true}
+          cardType="movie"
+          title="New Releases"
+          data={upcoming}
+        />
+      </div>
+      <div className="flex flex-col gap-20 py-10 lg:border mt-[120px] relative lg:border-black-500 rounded-md">
+        <div className="bg-red-700 -top-5 left-10 px-5 py-2 text-base font-semibold rounded-md text-white absolute">
+          Shows
+        </div>
+        <MovieSection cardType="genre" title="Our Genres" data={showGenres} />
+        <MovieSection
+          cardType="movie"
+          title="Popular Show"
+          data={popularShow}
+        />
+        <MovieSection
+        
+          cardType="movie"
+          title="New Released Shows"
+          data={onShow}
+        />
+      </div>
+    </>
   );
 }
