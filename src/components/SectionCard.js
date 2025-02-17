@@ -17,7 +17,7 @@ export default function SectionCard({ data, isUpComing }) {
               : "no-image"
           }
           alt={data.name}
-          className="w-full h-[193px] md:h-[232px] lg:max-h-[281px] rounded-md object-cover"
+          className="w-full h-[193px] md:h-[232px] lg:h-[281px] desktop:h-[300px] rounded-md object-cover"
         />
         {isUpComing ? (
           <div className="flex items-center justify-center date-info mt-4">
