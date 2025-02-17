@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function GenreCard({ data }) {
+export default function GenreCard({ data,type }) {
   // const genreMovies = data.movies.filter((movie) =>
   //   movie.genre_ids.includes(data.id)
   // );
@@ -9,7 +9,7 @@ export default function GenreCard({ data }) {
   // const selectedMovies = genreMovies.slice(0, 4);
   return (
     <Link
-      href={`/movies/genres/${data.id}`}
+      href={`/movies-shows/genres/${type}/${data.id}-${data.name.toLowerCase().replace(/\s+/g, "-")}`}
       className="block h-[260px] xl:[360px] p-4 bg-black-600  rounded-lg text-center border border-black-400 transition"
     >
       <div className="grid grid-cols-2 grid-rows-2 gap-1 ">
