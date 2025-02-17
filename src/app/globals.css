@@ -23,6 +23,6 @@ body {
   @apply w-11 h-11 bg-black-600 border border-black-400 rounded-md flex items-center justify-center transition-opacity duration-300 hover:opacity-70
 }
 
-.custom-pagination {
-  width: 0%;
+.button-set{
+  @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer
 }
