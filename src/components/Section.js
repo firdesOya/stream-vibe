@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import MovieCard from "./SectionCard";
 import GenreCard from "./GenreCard";
 import SliderButtons from "./SliderButtons";
@@ -19,6 +19,7 @@ export default function Section({
   loading,
 }) {
   const swiperRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const CardComponent = cardType === "movie" ? MovieCard : GenreCard;
 
@@ -27,13 +28,11 @@ export default function Section({
       <div className="flex flex-row justify-between items-center w-full mb-5 lg:mb-10 xl:mb-12">
         <h2 className="font-bold text-3xl">{title}</h2>
         <div className="hidden lg:block ">
-          <SliderButtons swiperRef={swiperRef} />
+          <SliderButtons swiperRef={swiperRef} currentIndex={currentIndex}/>
         </div>
       </div>
       <Swiper
         spaceBetween={20}
-        observer={true}
-        observeParents={true}
         slidesPerView={2}
         modules={[Navigation]}
         breakpoints={{
@@ -45,6 +44,7 @@ export default function Section({
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
         className="w-full overflow-hidden"
       >
         {loading ? (
@@ -58,7 +58,7 @@ export default function Section({
         ) : (
           data.map((item) => (
             <SwiperSlide key={item.id}>
-              <CardComponent data={item} isUpComing={isUpComing} type={type}/>
+              <CardComponent data={item} isUpComing={isUpComing} type={type} />
             </SwiperSlide>
           ))
         )}

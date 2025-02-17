@@ -24,5 +24,16 @@ body {
 }
 
 .button-set{
-  @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer
+  @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer hover:opacity-70
+}
+
+.custom-bullet {
+  background-color: gray;
+  transition: background-color 0.3s, width 0.3s;
+}
+
+.custom-bullet.swiper-pagination-bullet-active {
+  background-color: red !important;
+  width: 8px !important;
+  height: 8px !important;
 }
