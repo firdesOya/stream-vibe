@@ -41,6 +41,12 @@ export const fetchMoviesData = async () => {
   return data.results;
 };
 
+export const fetchNowPlayingData = async () => {
+  const url = `https://api.themoviedb.org/3/movie/now_playing?language=en`;
+  const data = await fetchData(url);
+  return data.results;
+};
+
 export const fetchUpComingData = async () => {
   const url = `https://api.themoviedb.org/3/movie/upcoming?language=en`;
   const data = await fetchData(url);
@@ -52,7 +58,6 @@ export const fetchPopularShowData = async () => {
   const data = await fetchData(url);
   return data.results;
 };
-
 
 export const fetchOnShowData = async () => {
   const url = `https://api.themoviedb.org/3/tv/on_the_air?language-en`;
