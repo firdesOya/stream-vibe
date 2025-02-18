@@ -1,4 +1,5 @@
 "use client";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SectionCard from "@/components/SectionCard";
 import SkeletonCard from "@/components/SkeletonCard";
 import { useParams } from "next/navigation";
@@ -43,16 +44,18 @@ export default function GenreMoviesAndShows() {
         console.log(error);
       }
     };
-
     fetchMoviesAndShows();
   }, [id, page, type]);
-  console.log(genreName);
+
   return (
-    <div className="container flex flex-col ">
+    <div className="flex flex-col relative">
+      <div className="relative">
+        <ScrollToTopButton />
+      </div>
       <h2 className="text-3xl text-start my-5 font-bold capitalize">
         {type}-{genreName}
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-5 justify-start ">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-3 justify-start ">
         {content.length > 0
           ? content.map((content) => (
               <SectionCard key={content.id} data={content} />
