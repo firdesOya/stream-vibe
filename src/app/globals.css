@@ -12,19 +12,19 @@ body {
 .button-line {
   @apply w-4 h-1 active:bg-red-700 bg-black-300 rounded-md;
 }
-.icon-info{
-  @apply text-gray-800  text-[8px] md:text-[10px] flex flex-row items-center gap-1 pl-1 pr-2 py-1 bg-black-700 border border-black-400 rounded-full 
+.icon-info {
+  @apply text-gray-800  text-[8px] md:text-[10px] flex flex-row items-center gap-1 pl-1 pr-2 py-1 bg-black-700 border border-black-400 rounded-full;
 }
-.date-info{
-  @apply text-gray-800 text-[8px] md:text-[10px] flex flex-row items-center gap-1 px-0 md:px-1 py-1 bg-black-700 border border-black-400 rounded-full 
-}
-
-.link-border{
-  @apply w-11 h-11 bg-black-600 border border-black-400 rounded-md flex items-center justify-center transition-opacity duration-300 hover:opacity-70
+.date-info {
+  @apply text-gray-800 text-[8px] md:text-[10px] flex flex-row items-center gap-1 px-0 md:px-1 py-1 bg-black-700 border border-black-400 rounded-full;
 }
 
-.button-set{
-  @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer hover:opacity-70
+.link-border {
+  @apply w-11 h-11 bg-black-600 border border-black-400 rounded-md flex items-center justify-center transition-opacity duration-300 hover:opacity-70;
+}
+
+.button-set {
+  @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer hover:opacity-70;
 }
 
 .custom-bullet {
@@ -36,4 +36,13 @@ body {
   background-color: red !important;
   width: 8px !important;
   height: 8px !important;
+}
+.bg-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(255, 0, 0, 0.5) 90%,
+    rgba(255, 0, 0, 0) 100%
+  );
 }
