@@ -17,7 +17,8 @@ export default {
       container: {
         center: true, // Otomatik ortalansın
         padding: {
-          DEFAULT: "1rem", // Tüm ekranlarda varsayılan olarak 16px (1rem) padding
+          DEFAULT: "1rem",
+          md:"2rem"
         },
         screens: {
           sm: "640px",
