@@ -13,7 +13,7 @@ export default function SectionCard({ data, isUpComing }) {
         <img
           src={
             data.poster_path
-              ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
+              ? `https://image.tmdb.org/t/p/w342${data.poster_path}`
               : "no-image"
           }
           alt={data.name}
