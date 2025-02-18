@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black-800 mt-[120px]">
+    <footer className="w-full bg-black-800 mt-20 xl:mt-[150px]">
       <div className="container">
         <div className="py-20 grid gap-7 grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 w-full items-start">
           <FooterMenu menuData={homeData} className="text-start" />
