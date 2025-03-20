@@ -43,9 +43,9 @@ export default function HeroSlider() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent"></div>
             </div>
-            <div className="text-center absolute z-10 min-w-[375px] lg:w-[1200px] px-10 bottom-4 lg:bottom-[126px] left-1/2 transform -translate-x-1/2">
-              <div className="mb-6">
-                <h2 className="font-bold mb-1 text-2xl xl:text-4xl">
+            <div className="text-center max-w-[70%]  absolute z-10 min-w-[375px] lg:w-[1200px] px-10 bottom-4 lg:bottom-[126px] left-1/2 transform -translate-x-1/2">
+              <div className="mb-6 ">
+                <h2 className="font-bold mb-1 text-3xl xl:text-4xl">
                   {item.title}
                 </h2>
                 <p className="font-medium hidden md:hidden xl:block text-base text-gray">
