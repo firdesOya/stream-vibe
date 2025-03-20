@@ -37,12 +37,25 @@ body {
   width: 8px !important;
   height: 8px !important;
 }
+
+
 .bg-gradient {
   background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.7) 70%,
-    rgba(255, 0, 0, 0.5) 90%,
-    rgba(255, 0, 0, 0) 100%
+    to bottom,
+    rgba(15, 15, 15, 1) 0%,
+    rgba(20, 15, 15, 0.97) 33%,
+    rgba(34, 14, 14, 0.91) 67%,
+    rgba(229, 0, 0, 0.5) 100%
   );
+}
+@media (min-width: 768px) {
+  .bg-gradient{
+    background: linear-gradient(
+      to right,
+      rgba(15, 15, 15, 1) 0%,
+      rgba(20, 15, 15, 0.97) 33%,
+      rgba(34, 14, 14, 0.91) 67%,
+      rgba(229, 0, 0, 0.5) 100%
+    );
+  }
 }
