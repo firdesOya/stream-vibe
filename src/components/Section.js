@@ -24,7 +24,7 @@ export default function Section({
   const CardComponent = cardType === "movie" ? MovieCard : GenreCard;
 
   return (
-    <div className="w-full flex flex-col px-0 lg:px-[40px] xl:px-[50px]">
+    <div className="w-full flex flex-col px-0">
       <div className="flex flex-row justify-between items-center w-full mb-5 lg:mb-10 xl:mb-12">
         <h2 className="font-bold text-3xl">{title}</h2>
         <div className="hidden lg:block ">
