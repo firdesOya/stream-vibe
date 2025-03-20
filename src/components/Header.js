@@ -10,7 +10,7 @@ export default function Header() {
         <img
           src="/icons/logo.svg"
           alt="logo"
-          className="w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 "
+          className="w-36 sm:w-40 md:w-42 lg:w-48 xl:w-56 "
         />
       </Link>
       <div className="flex items-center justify-center bg-black-500 rounded-md lg:hidden cursor-pointer w-11 h-11">
