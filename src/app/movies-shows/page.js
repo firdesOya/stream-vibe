@@ -2,6 +2,8 @@
 import FreeTrail from "@/components/FreeTrail";
 import HeroSlider from "@/components/HeroSlider";
 import Section from "@/components/Section";
+import SectionContent from "@/components/SectionContent";
+import ToggleButton from "@/components/ToggleButton";
 
 import {
   fetchGenresMoviesData,
@@ -21,6 +23,8 @@ export default function MoviePage() {
   const [showGenres, setShowGenres] = useState([]);
   const [popularShow, setPopularShow] = useState([]);
   const [onShow, setOnShow] = useState([]);
+
+  const [activeSection, setActiveSection] = useState("movies");
 
   useEffect(() => {
     async function fetchData() {
@@ -53,54 +57,57 @@ export default function MoviePage() {
       <div className="mb-20 lg:mb-24 mt-12">
         <HeroSlider />
       </div>
-      <div className="flex flex-col gap-20 py-10 lg:border relative lg:border-black-500 rounded-md">
-        <div className="bg-red-700 -top-5 left-10 px-5 py-2 text-base font-semibold rounded-md text-white absolute">
-          Movies
-        </div>
-        <Section
-          cardType="genre"
+      <div className="block md:hidden w-full text-center">
+        <ToggleButton setActiveSection={setActiveSection} activeSection={activeSection} />
+      </div>
+      <div className="hidden md:block">
+        <SectionContent
+          title="Movies"
           type="movie"
-          title="Our Genres"
-          data={genres}
-          loading={loading}
-        />
-        <Section
-          cardType="movie"
-          title="Now Playing"
-          data={movies}
-          loading={loading}
-        />
-        <Section
+          genres={genres}
+          data1={movies}
+          data1Title="Now Playing"
+          data2={upcoming}
+          data2Title="New Releases"
           isUpComing={true}
-          cardType="movie"
-          title="New Releases"
-          data={upcoming}
+          loading={loading}
+        />
+        <SectionContent
+          title="Shows"
+          type="tv"
+          genres={showGenres}
+          data1={popularShow}
+          data1Title="Popular Show"
+          data2={onShow}
+          data2Title="New Released Shows"
           loading={loading}
         />
       </div>
-      <div className="flex flex-col gap-20 py-10 lg:border mt-[120px] relative lg:border-black-500 rounded-md">
-        <div className="bg-red-700 -top-5 left-10 px-5 py-2 text-base font-semibold rounded-md text-white absolute">
-          Shows
-        </div>
-        <Section
-          cardType="genre"
-          type="tv"
-          title="Our Genres"
-          data={showGenres}
-          loading={loading}
-        />
-        <Section
-          cardType="movie"
-          title="Popular Show"
-          data={popularShow}
-          loading={loading}
-        />
-        <Section
-          cardType="movie"
-          title="New Released Shows"
-          data={onShow}
-          loading={loading}
-        />
+      <div className="block md:hidden">
+        {activeSection==="movies"? (
+          <SectionContent
+            title="Movies"
+            type="movie"
+            genres={genres}
+            data1={movies}
+            data1Title="Now Playing"
+            data2={upcoming}
+            data2Title="New Releases"
+            isUpComing={true}
+            loading={loading}
+          />
+        ) : (
+          <SectionContent
+            title="Shows"
+            type="tv"
+            genres={showGenres}
+            data1={popularShow}
+            data1Title="Popular Show"
+            data2={onShow}
+            data2Title="New Released Shows"
+            loading={loading}
+          />
+        )}
       </div>
       <div>
         <FreeTrail />
