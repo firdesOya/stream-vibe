@@ -13,11 +13,13 @@ const fetchData = async (url, options = {}) => {
     const finalOptions = { ...defaultOptions, ...options };
     const response = await fetch(url, finalOptions);
     const data = await response.json();
-    if (response.ok) {
-      return data;
-    } else {
-      throw new Error(data.status_message || "Bir hata oluştu");
+    if (!response.ok) {
+      throw new Error(
+        `Hata ${response.status}: ${data.status_message || "Bilinmeyen hata"}`
+      );
     }
+    return data;
+  
   } catch (error) {
     console.log(error);
     throw error;
@@ -54,13 +56,13 @@ export const fetchUpComingData = async () => {
 };
 
 export const fetchPopularShowData = async () => {
-  const url = `https://api.themoviedb.org/3/tv/popular?language-en`;
+  const url = `https://api.themoviedb.org/3/tv/popular?language=en`;
   const data = await fetchData(url);
   return data.results;
 };
 
 export const fetchOnShowData = async () => {
-  const url = `https://api.themoviedb.org/3/tv/on_the_air?language-en`;
+  const url = `https://api.themoviedb.org/3/tv/on_the_air?language=en`;
   const data = await fetchData(url);
   return data.results;
 };
