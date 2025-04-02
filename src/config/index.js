@@ -94,3 +94,42 @@ export const subData = {
     },
   ],
 };
+
+export const provideDevices = [
+  {
+    imgSrc: "/images/phoneIcon.svg",
+    title: "Smartphones",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+  {
+    imgSrc: "/images/tabletIcon.svg",
+    title: "Tablet",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+  {
+    imgSrc: "/images/smartTvIcon.svg",
+    title: "Smart TV",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+  {
+    imgSrc: "/images/laptopIcon.svg",
+    title: "Laptops",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+  {
+    imgSrc: "/images/gameIcon.svg",
+    title: "Gaming Consoles",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+  {
+    imgSrc: "/images/vrIcon.svg",
+    title: "VR Headsets",
+    description:
+      "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store",
+  },
+];
