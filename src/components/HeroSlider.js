@@ -5,7 +5,9 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import PlayButton from "./PlayButton";
 
 export default function HeroSlider() {
   const [content, setContent] = useState([]);
@@ -23,12 +25,17 @@ export default function HeroSlider() {
   return (
     <>
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         pagination={{
           el: ".custom-pagination",
           clickable: true,
           dynamicBullets: false,
         }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         className="h-[468px] lg:h-[710px] desktop:h-[835px]"
@@ -43,20 +50,17 @@ export default function HeroSlider() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent"></div>
             </div>
-            <div className="text-center max-w-[70%]  absolute z-10 min-w-[375px] lg:w-[1200px] px-10 bottom-4 lg:bottom-[126px] left-1/2 transform -translate-x-1/2">
+            <div className="text-center max-w-[960px]  absolute z-10 min-w-[375px] lg:w-[1200px] px-10 bottom-4 lg:bottom-[126px] left-1/2 transform -translate-x-1/2">
               <div className="mb-6 ">
                 <h2 className="font-bold mb-1 text-3xl xl:text-4xl">
                   {item.title}
                 </h2>
-                <p className="font-medium hidden md:hidden xl:block text-base text-gray">
+                <p className="font-medium hidden md:hidden xl:block text-base text-gray-800">
                   {item.overview}
                 </p>
               </div>
               <div className="w-full px-4 relative z-20 flex flex-col lg:flex-row items-center justify-center gap-5 ">
-                <button className="bg-red-700 hover:bg-red-500 text-sm font-bold z-20 w-full lg:w-[128px] flex justify-center items-center gap-2 py-2 lg:py-4 rounded-md cursor-pointer">
-                  <img src="/icons/play.svg" />
-                  Play Now
-                </button>
+                <PlayButton title="Play now" className="w-full lg:max-w-[157px]"/>
                 <div className="flex items-center gap-2">
                   <button className="button-set">
                     <img src="/icons/plus.svg" />

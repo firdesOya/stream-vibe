@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden lg:flex flex-row py-2 px-3 gap-4 outline outline-4 outline-black-500 rounded-md">
+    <nav className="hidden lg:flex flex-row py-2 px-3 gap-4 outline outline-4 bg-black-800 outline-black-500 rounded-md">
       {navbarLinks.map((navlink) => {
         const activeLink = navlink.path === "/"
             ? pathname === "/"
@@ -19,7 +19,7 @@ export default function Navbar() {
             key={navlink.id}
             href={navlink.path}
             className={`${
-              activeLink ? "bg-black-600 rounded-md" : "text-gray-400"
+              activeLink ? "bg-black-600 text-white rounded-md" : "text-gray-500"
             } desktop:text-lg xl:text-sm px-4 py-4 cursor-pointer`}
           >
             {navlink.name}

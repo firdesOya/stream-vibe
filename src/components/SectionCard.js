@@ -3,6 +3,7 @@ import {
   formatPopularity,
   randomNumberInRange,
 } from "@/utils/helpers";
+import Link from "next/link";
 import React from "react";
 
 export default function SectionCard({ data, isUpComing }) {
@@ -19,6 +20,7 @@ export default function SectionCard({ data, isUpComing }) {
           alt={data.name}
           className="w-full h-[193px] md:h-[232px] lg:h-[281px] desktop:h-[300px] rounded-md object-cover"
         />
+
         {isUpComing ? (
           <div className="flex items-center justify-center date-info mt-4">
             Released at

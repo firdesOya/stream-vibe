@@ -57,8 +57,8 @@ export default function GenreMoviesAndShows() {
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-3 justify-start ">
         {content.length > 0
-          ? content.map((content) => (
-              <SectionCard key={content.id} data={content} />
+          ? content.map((content,index) => (
+              <SectionCard key={`${content.id}--${index}`} data={content} />
             ))
           : Array.from({ length: 10 }).map((_, index) => (
               <SkeletonCard key={index} />
