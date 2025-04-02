@@ -9,9 +9,9 @@ export default function ToggleButton({ setActiveSection, activeSection }) {
       <button
         className={`${
           activeSection === "movies"
-            ? "text-white bg-black-500"
+            ? "text-white bg-black-500 rounded-md"
             : "text-gray-800 bg-transparent"
-        } text-sm py-3 w-1/2`}
+        } text-sm py-3 w-1/2 transition duration-300 ease-in-out`}
         onClick={() => setActiveSection("movies")}
       >
         Movies
@@ -19,9 +19,9 @@ export default function ToggleButton({ setActiveSection, activeSection }) {
       <button
         className={`${
           activeSection === "shows"
-            ? "text-white bg-black-500"
+            ? "text-white bg-black-500 rounded-md"
             : "text-gray-800 bg-transparent"
-        } text-sm py-3 w-1/2`}
+        } text-sm py-3 w-1/2 transition duration-300 ease-in-out`}
         onClick={() => setActiveSection("shows")}
       >
         Shows

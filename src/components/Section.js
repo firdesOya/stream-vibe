@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import SkeletonCard from "./SkeletonCard";
+import Link from "next/link";
 
 export default function Section({
   data,
@@ -28,7 +29,7 @@ export default function Section({
       <div className="flex flex-row justify-between items-center w-full mb-5 lg:mb-10 xl:mb-12">
         <h2 className="font-bold text-3xl">{title}</h2>
         <div className="hidden lg:block ">
-          <SliderButtons swiperRef={swiperRef} currentIndex={currentIndex}/>
+          <SliderButtons swiperRef={swiperRef} currentIndex={currentIndex} />
         </div>
       </div>
       <Swiper
@@ -58,7 +59,13 @@ export default function Section({
         ) : (
           data.map((item) => (
             <SwiperSlide key={item.id}>
-              <CardComponent data={item} isUpComing={isUpComing} type={type} />
+          
+                <CardComponent
+                  data={item}
+                  isUpComing={isUpComing}
+                  type={type}
+                />
+
             </SwiperSlide>
           ))
         )}
