@@ -71,8 +71,8 @@ body {
 }
 .bg-gradient-devices {
   background: linear-gradient(
-    to right,
+    to top right,
     rgba(0, 0, 0, 0.9) 81%,
-    rgba(229, 0, 0, 0.1) 100%
+    rgba(229, 0, 0, 0.12) 100%
   );
 }

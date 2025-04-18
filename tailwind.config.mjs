@@ -9,13 +9,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Manrope", "sans-serif"], // Varsayılan sans-serif fontu olarak Manrope'u tanımlıyoruz
+        sans: ["Manrope", "sans-serif"], 
       },
       screens: {
-        desktop: "1598px", // 1598px ve üstü için özel sınıf
+        desktop: "1598px", 
       },
       container: {
-        center: true, // Otomatik ortalansın
+        center: true, 
         padding: {
           DEFAULT: "1rem",
           md:"2rem"
