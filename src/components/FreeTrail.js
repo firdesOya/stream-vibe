@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 export default function FreeTrail() {
   return (
@@ -20,9 +21,7 @@ export default function FreeTrail() {
             sign up for a free trial of StreamVibe.
           </p>
         </div>
-        <div className="w-[150px] desktop:w-[170px] flex items-center justify-center py-3 px-2 font-semibold bg-red-700 text-sm desktop:text-lg hover:opacity-70 rounded-md">
-          <button className=" ">Start a Free Trail</button>
-        </div>
+        <Button title="Start a Free Trail" className="w-[160px] desktop:w-[170px]"/>
       </div>
     </div>
   );

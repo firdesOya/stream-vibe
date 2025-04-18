@@ -1,9 +1,7 @@
 import React from "react";
 
 export default function ToggleButton({ setActiveSection, activeSection }) {
-  const onToggle = () => {
-    setActiveSection(!activeSection);
-  };
+
   return (
     <div className="p-2 border border-solid border-black-400 rounded-md ">
       <button

@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import PlayButton from "./PlayButton";
+import Button from "./Button";
 
 export default function HeroSlider() {
   const [content, setContent] = useState([]);
@@ -60,7 +60,7 @@ export default function HeroSlider() {
                 </p>
               </div>
               <div className="w-full px-4 relative z-20 flex flex-col lg:flex-row items-center justify-center gap-5 ">
-                <PlayButton title="Play now" className="w-full lg:max-w-[157px]"/>
+                <Button title="Play now" icon="/icons/play.svg" className="w-full lg:max-w-[157px]"/>
                 <div className="flex items-center gap-2">
                   <button className="button-set">
                     <img src="/icons/plus.svg" />
