@@ -1,10 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SectionHead from "./SectionHead";
 import Button from "./Button";
 import { questionsData } from "@/config";
 import QuestionItem from "./QuestionItem";
 
 export default function QuestionSection() {
+  const [openId, setOpenId] = useState(1);
+
+  const handleToggle = (id) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
+  const middleIndex = Math.ceil(questionsData.length / 2);
+  const leftColumn = questionsData.slice(0, middleIndex);
+  const rightColumn = questionsData.slice(middleIndex);
+
   return (
     <div className="mt-[120px]">
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 justify-between">
@@ -13,16 +24,32 @@ export default function QuestionSection() {
           subtitle="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
         />
         <div>
-          <Button title="Ask a Question" className="min-w-[142px]"/>
+          <Button title="Ask a Question" className="min-w-[142px]" />
         </div>
       </div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 mt-[60px]">
-    {
-        questionsData.map((item)=>{
-          return <QuestionItem key={item.id} data={item}/>
-        })
-      }
-    </div>
+      <div className="flex flex-col lg:flex-row lg:gap-10 lg:max-h-[500px] lg:h-[500px] mt-[60px]">
+        <div className="flex-1 flex flex-col gap-6">
+          {leftColumn.map((item) => (
+            <QuestionItem
+              key={item.id}
+              data={item}
+              handleToggle={handleToggle}
+              isOpen={openId === item.id}
+            />
+          ))}
+        </div>
+
+        <div className="flex-1 flex flex-col gap-6">
+          {rightColumn.map((item) => (
+            <QuestionItem
+              key={item.id}
+              data={item}
+              handleToggle={handleToggle}
+              isOpen={openId === item.id}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
