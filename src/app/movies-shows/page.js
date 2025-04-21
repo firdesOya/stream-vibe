@@ -58,7 +58,14 @@ export default function MoviePage() {
         <HeroSlider />
       </div>
       <div className="block md:hidden w-full text-center">
-        <ToggleButton setActiveSection={setActiveSection} activeSection={activeSection} />
+        <ToggleButton
+          options={[
+            { label: "Movies", value: "movies" },
+            { label: "Shows", value: "shows" },
+          ]}
+          setActiveSection={setActiveSection}
+          activeSection={activeSection}
+        />
       </div>
       <div className="hidden md:block">
         <SectionContent
@@ -84,7 +91,7 @@ export default function MoviePage() {
         />
       </div>
       <div className="block md:hidden">
-        {activeSection==="movies"? (
+        {activeSection === "movies" ? (
           <SectionContent
             title="Movies"
             type="movie"
