@@ -3,6 +3,7 @@ import DeviceFeatures from "@/components/DeviceFeatures";
 import FreeTrail from "@/components/FreeTrail";
 import HomeBackground from "@/components/HomeBackground";
 import IntroHero from "@/components/IntroHero";
+import PlanSection from "@/components/PlanSection";
 import QuestionSection from "@/components/QuestionSection";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <IntroHero />
       <DeviceFeatures />
       <QuestionSection/>
+      <PlanSection/>
       <FreeTrail />
     </div>
   );
