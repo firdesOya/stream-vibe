@@ -20,11 +20,11 @@ export default function DeviceFeatures() {
                 <div className="w-11 h-11 lg:w-14 lg:h-14 2xl:w-[72px] 2xl:h-[72px] p-3 flex items-center justify-center bg-black-700 border border-black-500 rounded-md">
                   <img src={item.imgSrc} />
                 </div>
-                <h4 className="text-lg xl:text-xl 2xl:text-2xl text-white">
+                <h4 className="title">
                   {item.title}
                 </h4>
               </div>
-              <p className="text-sm lg:text-base 2xl:text-lg mt-5 lg:mt-6 2xl:mt-[30px] text-gray-800">
+              <p className="global-text mt-5 lg:mt-6 2xl:mt-[30px] ">
                 {item.description}
               </p>
             </div>
