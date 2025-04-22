@@ -26,11 +26,20 @@ body {
 .button-set {
   @apply w-12 h-12 flex items-center justify-center bg-black-800 border border-black-400 rounded-md cursor-pointer hover:opacity-70;
 }
-.global-text{
-  @apply text-sm text-gray-800 lg:text-base 2xl:text-lg
+.global-text {
+  @apply text-sm text-gray-800 lg:text-base 2xl:text-lg;
 }
-.title{
-  @apply text-lg text-white font-bold lg:text-xl 2xl:text-2xl
+.title {
+  @apply text-lg text-white font-bold lg:text-xl 2xl:text-2xl;
+}
+.input {
+  @apply bg-black-700 border border-black-400 text-gray-800 rounded-md outline-none w-full px-4 py-2;
+}
+.input::placeholder {
+  @apply text-gray-800 text-xs;
+}
+.label {
+  @apply text-base 2xl:text-lg font-semibold;
 }
 
 .custom-bullet {
