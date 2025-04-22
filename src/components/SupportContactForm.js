@@ -82,13 +82,21 @@ export default function SupportContactForm() {
               },
               maxLength: { value: 500, message: "En fazla 500 karakter" },
             })}
-            className="input overflow-auto"
+            className="input overflow-auto h-[109px] "
             placeholder="Enter your message"
-            rows="8"
+            
           />
         </div>
 
-        <Button title="Send Message" type="submit" />
+        <div className="flex flex-col gap-5 lg:flex-row items-start lg:items-center justify-between w-full">
+          <div className="flex gap-2">
+            <input type="checkbox" />
+            <span className="global-text">
+              I agree with Terms of Use and Privacy Policy
+            </span>
+          </div>
+          <Button title="Send Message" type="submit" className="w-full lg:w-auto"/>
+        </div>
       </form>
     </div>
   );
