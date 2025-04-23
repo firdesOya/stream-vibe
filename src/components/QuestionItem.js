@@ -8,7 +8,7 @@ export default function QuestionItem({ data, handleToggle, isOpen }) {
     <div
       className={`${
         isOpen ? "items-center" : "items-start"
-      } flex  justify-between px-6 py-3 gap-4`}
+      } flex  justify-between lg:px-6 py-3 gap-4`}
     >
       <div className={`${isOpen ? "items-start " :"items-center"}  flex flex-wrap lg:flex-nowrap  gap-4`}>
         <div className="flex items-start">

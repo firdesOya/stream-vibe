@@ -8,7 +8,7 @@ export default function Button({
   variant = "primary",
 }) {
   const baseClasses =
-    "text-sm font-bold z-20 flex justify-center items-center gap-2 py-3 px-5 2xl:py-[18px] 2xl:px-6 rounded-md cursor-pointer";
+    "text-sm 2xl:text-[18px] font-bold z-20 flex justify-center items-center gap-2 py-3 px-5 2xl:py-[18px]  rounded-md cursor-pointer";
   let variantClasses = "";
   if (variant === "primary") {
     variantClasses = "bg-red-700 hover:bg-red-500 text-white";

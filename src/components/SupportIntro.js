@@ -13,7 +13,7 @@ export default function SupportIntro() {
         </p>
       </div>
       <div className="w-full border-[6px] border-black-400 rounded-md  ">
-        <img src="/images/group.png" className="w-full " alt="poster-image" />
+        <img src="/images/group.png" className="w-full h-auto max-h-[420px] " alt="poster-image" />
       </div>
     </div>
   );

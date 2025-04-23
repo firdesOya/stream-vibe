@@ -14,7 +14,7 @@ export default function SupportContactForm() {
         className="flex gap-5 lg:gap-10 2xl:gap-12 flex-wrap w-full"
       >
         <div className="flex flex-col lg:flex-row w-full gap-5">
-          <div className="w-full lg:w-[calc(50%-20px)]  flex flex-col gap-2">
+          <div className="w-full lg:w-[calc(50%-20px)]  flex flex-col gap-5">
             <label className="label">First Name </label>
             <input
               {...register("firstName", {
@@ -28,7 +28,7 @@ export default function SupportContactForm() {
               placeholder="Enter First Name"
             />
           </div>
-          <div className="w-full lg:w-1/2 flex flex-col gap-2">
+          <div className="w-full lg:w-1/2 flex flex-col gap-5">
             <label className="label">Last Name</label>
             <input
               {...register("lastName", {
@@ -44,7 +44,7 @@ export default function SupportContactForm() {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row w-full gap-5">
-          <div className="w-full lg:w-[calc(50%-20px)]  flex flex-col gap-2">
+          <div className="w-full lg:w-[calc(50%-20px)]  flex flex-col gap-5">
             <label className="label">Email</label>
             <input
               {...register("email", {
@@ -55,7 +55,7 @@ export default function SupportContactForm() {
               className="input"
             />
           </div>
-          <div className="w-full lg:w-1/2 flex flex-col gap-2">
+          <div className="w-full lg:w-1/2 flex flex-col gap-5">
             <label className="label">Phone Number</label>
             <input
               {...register("phoneNumber", {
@@ -82,9 +82,8 @@ export default function SupportContactForm() {
               },
               maxLength: { value: 500, message: "En fazla 500 karakter" },
             })}
-            className="input overflow-auto h-[109px] "
+            className="input overflow-auto h-[109px] 2xl:h-[163px]"
             placeholder="Enter your message"
-            
           />
         </div>
 
@@ -95,7 +94,11 @@ export default function SupportContactForm() {
               I agree with Terms of Use and Privacy Policy
             </span>
           </div>
-          <Button title="Send Message" type="submit" className="w-full lg:w-auto"/>
+          <Button
+            title="Send Message"
+            type="submit"
+            className="w-full lg:w-auto"
+          />
         </div>
       </form>
     </div>
