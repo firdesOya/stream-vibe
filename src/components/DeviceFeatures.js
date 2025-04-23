@@ -9,7 +9,7 @@ export default function DeviceFeatures() {
         title="We Provide you streaming experience across various devices."
         subtitle="With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
       />
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-5 2xl:gap-7 mt-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 2xl:gap-7 mt-14">
         {provideDevices.map((item, index) => {
           return (
             <div
