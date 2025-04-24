@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import SectionHead from "./SectionHead";
 import Button from "./Button";
-import { questionsData } from "@/config";
+
 import QuestionItem from "./QuestionItem";
+import { questionsData } from "@/config/questionData";
 
 export default function QuestionSection() {
   const [openId, setOpenId] = useState(1);
