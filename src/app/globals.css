@@ -5,6 +5,15 @@
 body {
   @apply text-white bg-black-700 font-sans;
 }
+th,td{
+  @apply p-6 border border-black-400 text-left 
+}
+th{
+  @apply font-semibold text-lg w-1/4 bg-black-800
+}
+td{
+  @apply global-text
+}
 
 .button-arrow {
   @apply w-11 h-11 bg-black-500  rounded-md flex justify-center items-center;
@@ -37,6 +46,14 @@ body {
 }
 .input::placeholder {
   @apply text-gray-800 text-xs;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-radius: 6px !important;
+  background-color: #1a1a1a !important;
+  transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
 }
 .label {
   @apply text-base 2xl:text-lg font-semibold;
