@@ -23,7 +23,7 @@ export default function IntroHero() {
       <Button
         title="Start Watching Now"
         icon="/icons/play.svg"
-        className="w-[219px]"
+        className="xl:w-[260px] "
       />
     </div>
   );
