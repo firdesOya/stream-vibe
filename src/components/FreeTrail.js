@@ -21,7 +21,7 @@ export default function FreeTrail() {
             sign up for a free trial of StreamVibe.
           </p>
         </div>
-        <Button title="Start a Free Trail" className="w-[160px] desktop:w-[170px]"/>
+        <Button title="Start a Free Trail" className="w-[160px] 2xl:w-[200px]"/>
       </div>
     </div>
   );
