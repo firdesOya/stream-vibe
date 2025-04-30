@@ -4,9 +4,10 @@ export default function ToggleButton({
   options,
   setActiveSection,
   activeSection,
+  className
 }) {
   return (
-    <div className="p-2 border border-solid border-black-400 rounded-md flex justify-between flex-row w-full">
+    <div className={`${className} p-2 border border-solid border-black-400 rounded-md flex justify-between flex-row w-full`}>
       {options.map((option) => {
         return (
           <div key={option.value} className="w-1/2">

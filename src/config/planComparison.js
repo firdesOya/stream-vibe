@@ -4,10 +4,10 @@ export const planComparison = [
     popular: false,
     features: {
       price: "$9.99/Month",
+      trial: "7 Days",
       content:
         "Access to a wide selection of movies and shows, including some new releases.",
       devices: "Watch on one device simultaneously",
-      trial: "7 Days",
       cancel: "Yes",
       hdr: "No",
       dolby: "No",
@@ -21,10 +21,10 @@ export const planComparison = [
     popular: true,
     features: {
       price: "$12.99/Month",
+      trial: "7 Days",
       content:
         "Access to a wider selection of movies and shows, including most new releases and exclusive content.",
       devices: "Watch on Two device simultaneously",
-      trial: "7 Days",
       cancel: "Yes",
       hdr: "Yes",
       dolby: "Yes",
@@ -38,10 +38,10 @@ export const planComparison = [
     popular: false,
     features: {
       price: "$14.99/Month",
+      trial: "7 Days",
       content:
         "Access to a widest selection of movies and shows, including all new releases and Offline Viewing",
       devices: "Watch on Four device simultaneously",
-      trial: "7 Days",
       cancel: "Yes",
       hdr: "Yes",
       dolby: "Yes",
